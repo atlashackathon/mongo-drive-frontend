@@ -5,11 +5,12 @@ import { Fragment } from "react";
 function App() {
   return (
     <Fragment>
-      <div className="main-wrapper" style={{}}>
-          <ElevateAppBar /> 
+      <div
+        className="main-wrapper"
+        style={{ minHeight: "100vh", width: "100%" }}
+      >
+        <ElevateAppBar />
       </div>
-   
-      
     </Fragment>
   );
 }
