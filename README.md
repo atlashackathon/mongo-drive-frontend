@@ -1,6 +1,8 @@
 # mongo-drive-frontend
 Simple and Small file storage service using Mongo DB. Tech: MERN
 
+![dui-mongo](https://user-images.githubusercontent.com/43678736/149432769-83fdadd0-cca1-4ddd-bd63-ee2a54629974.png)
+
 
 ## Available Scripts
 

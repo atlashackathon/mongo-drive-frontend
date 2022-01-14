@@ -1,11 +1,17 @@
 import logo from "./logo.svg";
-import { Dropzone, FileItem, FullScreenPreview } from "@dropzone-ui/react";
+import {
+  Dropzone,
+  FileItem,
+  FullScreenPreview,
+  VideoPreview,
+} from "@dropzone-ui/react";
 import { useState } from "react";
 import "./App.css";
 import ElevateAppBar from "./components/ElevateAppBar";
 import { Fragment } from "react";
 function App() {
   const [files, setFiles] = useState([]);
+  const [videoSrc, setVideoSrc] = useState(undefined);
   const [imageSrc, setImageSrc] = useState(undefined);
   const updateFiles = (incommingFiles) => {
     console.log("incomming files", incommingFiles);
@@ -20,11 +26,15 @@ function App() {
   const handleClean = (files) => {
     console.log("list cleaned", files);
   };
+  const handleWatch = (vidSrc) => {
+    console.log("handleWatch", vidSrc);
+    setVideoSrc(vidSrc);
+  };
   return (
     <Fragment>
       <div
         className="main-wrapper"
-        style={{ height: "100vh", width: "80%", margin:"auto" }}
+        style={{ height: "100vh", width: "80%", margin: "auto" }}
       >
         <ElevateAppBar />
         <Dropzone
@@ -58,19 +68,56 @@ function App() {
               onDelete={onDelete}
               onSee={handleSee}
               //localization={"ES-es"}
+              onWatch={handleWatch}
               resultOnTooltip
               preview
               info
               hd
             />
           ))}
-          <FullScreenPreview
-            imgSource={imageSrc}
-            openImage={imageSrc}
-            onClose={(e) => handleSee(undefined)}
-          />
         </Dropzone>
+        <FullScreenPreview
+          imgSource={imageSrc}
+          openImage={imageSrc}
+          onClose={(e) => handleSee(undefined)}
+        />
+        <VideoPreview
+          videoSrc={videoSrc}
+          openVideo={videoSrc}
+          onClose={(e) => handleWatch(undefined)}
+          controls
+          autoplay
+        />
       </div>
+      <Fragment>
+      <p>
+        {"Get some "}
+        <a
+          href="https://www.learningcontainer.com/mp4-sample-video-files-download/#Sample_MP4_File"
+          target="_blank"
+        >
+          MP4 demo videos
+        </a>
+      </p>
+      <p>
+        {"Get some "}
+        <a
+          href="https://www.learningcontainer.com/mp4-sample-video-files-download/#Sample_OGV_File"
+          target="_blank"
+        >
+          OGV demo videos
+        </a>
+      </p>
+      <p>
+        {"Get some "}
+        <a
+          href="https://www.learningcontainer.com/mp4-sample-video-files-download/#Sample_WEBM_File"
+          target="_blank"
+        >
+          WEBM demo videos
+        </a>
+      </p>
+    </Fragment>
     </Fragment>
   );
 }
