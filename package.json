@@ -15,7 +15,7 @@
     "url": "git+https://github.com/atlashackathon/mongo-drive-frontend.git"
   },
   "dependencies": {
-    "@dropzone-ui/react": "^6.5.1",
+    "@dropzone-ui/react": "^6.7.1",
     "@dynamicss/dynamicss": "^2.1.0",
     "@emotion/react": "^11.6.0",
     "@emotion/styled": "^11.6.0",
