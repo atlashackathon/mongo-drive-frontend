@@ -16,7 +16,7 @@
   },
   "dependencies": {
     "@dropzone-ui/react": "^6.5.1",
-    "@dynamicss/dynamicss": "^2.1.0",
+    "@dynamicss/dynamicss": "^2.2.2",
     "@emotion/react": "^11.6.0",
     "@emotion/styled": "^11.6.0",
     "@mui/icons-material": "^5.1.1",
